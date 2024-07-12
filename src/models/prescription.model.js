@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
-const { toJSON } = require('./plugins/toJSON.plugin');
-const { paginate } = require('./plugins/paginate.plugin');
+const { toJSON, paginate } = require('./plugins');
+
 
 
 
