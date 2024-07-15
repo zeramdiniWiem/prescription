@@ -5,11 +5,23 @@ const ApiError = require('../utils/ApiError');
 //Le modèle de prescription Mongoose
 const { Prescription } = require('../models');
 
-
+/**
+ * Create a Prescription
+ * @param {Object} prescriptionBody
+ * @returns {Promise<Prescription>}
+ */
 const createPrescription = async (prescriptionBody) => {
   return Prescription.create(prescriptionBody);
 };
-
+/**
+ * Query for prescriptions
+ * @param {Object} filter - Mongo filter
+ * @param {Object} options - Query options
+ * @param {string} [options.sortBy] - Sort option in the format: sortField:(desc|asc)
+ * @param {number} [options.limit] - Maximum number of results per page (default = 10)
+ * @param {number} [options.page] - Current page (default = 1)
+ * @returns {Promise<QueryResult>}
+ */
 
 const queryPrescriptions = async (filter, options) => {
   const prescriptions = await Prescription.paginate(filter, options);
