@@ -1,9 +1,6 @@
 const mongoose = require('mongoose');
 const { toJSON, paginate } = require('./plugins');
 
-
-
-
 const prescriptionSchema = mongoose.Schema(
   {
     patient: {
